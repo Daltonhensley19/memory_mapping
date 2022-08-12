@@ -1,0 +1,35 @@
+Author: Dalton Hensley
+X-1 ISA:
+
+8-bit Instruction Format:
+# # # # # | # # #  
+{Opcode: 32}    {Varient: 8}
+
+[MATH Instructions]:
+ADD [reg1] [reg2]       ;  (rax += rbx)   [Opcode: 0x10]
+ADD [reg1] [reg2]       ;  (rax += rcx)   [Opcode: 0x11]
+SUB [reg1] [reg2]       ;  (reg1 -= reg2) [Opcode: 0x20]
+MUL [reg1] [reg2]       ;  (reg1 *= reg2) [Opcode: 0x30]
+DIV [reg1] [reg2]       ;  (reg1 /= reg2) [Opcode: 0x40]
+
+
+[I/O Instructions]:
+FETCH [reg] [mem]       ; (rax = mem[idx])      [Opcode: 0x50]
+FETCH [reg] [mem]       ; (rbx = mem[idx])      [Opcode: 0x51]
+STORE [mem] [reg]       ; (mem[idx] = rax)      [Opcode: 0x60]
+STORE [mem] [mem]       ; (mem[idx] = mem[jdx]) [Opcode: 0x61]
+
+
+[Control Flow Instructions]:
+HALT                    ; (Program terminates) [Opcode: 0xFF]
+
+[Register List]:
+* pc
+* rax
+* rbx
+* rcx
+* rdx
+* r1
+* r2
+* r3
+* r4
